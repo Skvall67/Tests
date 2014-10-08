@@ -100,7 +100,6 @@ m_timer->setInterval( 1000 );
 m_camera->start();
 
 m_imageCapture = new QCameraImageCapture( m_camera );
-//m_imageCapture->setCaptureDestination( QCameraImageCapture::CaptureToBuffer );
 m_imageCapture->setCaptureDestination( QCameraImageCapture::CaptureToFile );
 
 connect( m_timer, &QTimer::timeout, [=]()
@@ -118,12 +117,6 @@ connect( m_timer, &QTimer::timeout, [=]()
 
             capture();
         }
-    }
-);
-
-connect( ui.copyButton, &QPushButton::clicked, [=]( bool )
-    {
-        QApplication::clipboard()->setImage( m_pixmap.toImage() );
     }
 );
 }
