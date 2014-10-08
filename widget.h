@@ -16,7 +16,6 @@ class widget : public QWidget
 public:
     widget();
     ~widget();
-    bool nativeEvent( QByteArray ba, void *message, long *result );
     
 public slots:
     void capture( bool checked = false );
